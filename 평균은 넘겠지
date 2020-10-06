@@ -1,0 +1,10 @@
+#백준 4344 평균은 넘겠지
+C = int(input())
+for i in range(C):
+    score = list(map(int, input().split()))
+    avg = sum(score[1:])/score[0] #평균구하기
+    cnt = 0
+    for j in score[1:]: #리스트 1번부터 끝까지 반복
+        if j > avg: #j가 avg보다 클 경우 1회 카운트 후 저장
+            cnt += 1
+    print(str("%.3f" %round((cnt/score[0])*100, 3))+"%")
